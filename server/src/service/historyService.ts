@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-import * as path from 'path';
 
 
 // TODO: Define a City class with name and id properties
@@ -10,9 +9,7 @@ class City {
 }
 
 class HistoryService {
-  
-  private filePath = path.join(__dirname, 'searchHistory.json');
-
+  filePath= "../../db/db.json";
   private async read(): Promise<City[]> {
     try {
       const data = await fs.promises.readFile(this.filePath, 'utf-8');
